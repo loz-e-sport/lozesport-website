@@ -1,0 +1,32 @@
+@mixin div() {
+  min-height: 100vh;
+  padding: 5rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+@mixin section() {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin h2() {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+@mixin cf {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}

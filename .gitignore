@@ -1,2 +1,5 @@
-package.json
 node_modules
+.sass-cache
+package-lock.json
+.vscode
+*.pyc

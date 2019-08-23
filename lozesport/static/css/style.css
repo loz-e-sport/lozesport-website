@@ -1,0 +1,596 @@
+@charset "UTF-8";
+.card .menu-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+  content: "";
+  display: table;
+}
+.card .menu-content::after {
+  clear: both;
+}
+.card .menu-content li {
+  display: inline-block;
+}
+.card .menu-content a {
+  color: #fff;
+}
+.card .menu-content span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Open Sans";
+  transform: translate(-50%, 0);
+}
+.card .wrapper {
+  background-color: #fff;
+  min-height: 540px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+.card .data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.card .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.card .author {
+  font-size: 12px;
+}
+.card .title {
+  margin-top: 10px;
+}
+.card .text {
+  margin: 0;
+}
+.card input[type=checkbox] {
+  display: none;
+}
+.card input[type=checkbox]:checked + .menu-content {
+  transform: translateY(-60px);
+}
+
+.example-2 .wrapper {
+  background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center/cover no-repeat;
+}
+.example-2 .data {
+  color: #fff;
+}
+.example-2 .title a {
+  color: #fff;
+}
+.example-2 .button {
+  display: block;
+  width: 100px;
+  margin: 2em auto 1em;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+.example-2 .button::after {
+  content: "→";
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.3s;
+}
+.example-2 .button:hover::after {
+  transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+/*  BURGER MENU
+========================================== */
+.menu {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 21;
+  right: 1%;
+}
+
+.menu span {
+  position: relative;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -1.5px;
+}
+
+.menu span,
+.menu span::after,
+.menu span::before {
+  display: block;
+  width: 26px;
+  right: 0;
+  height: 3px;
+  background-color: red;
+  outline: 1px solid transparent;
+  -webkit-transition-property: background-color, -webkit-transform;
+  -moz-transition-property: background-color, -moz-transform;
+  -o-transition-property: background-color, -o-transform;
+  transition-property: background-color, transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.menu span::after,
+.menu span::before {
+  position: absolute;
+  content: "";
+}
+
+.menu span::before {
+  top: -9px;
+  width: 20px;
+}
+
+.menu span::after {
+  top: 9px;
+  width: 33px;
+}
+
+.menu.clicked span {
+  background-color: transparent;
+}
+
+.menu.clicked span::before {
+  -webkit-transform: translateY(9px) rotate(45deg);
+  -moz-transform: translateY(9px) rotate(45deg);
+  -ms-transform: translateY(9px) rotate(45deg);
+  -o-transform: translateY(9px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
+  width: 33px;
+}
+
+.menu.clicked span::after {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+  -moz-transform: translateY(-9px) rotate(-45deg);
+  -ms-transform: translateY(-9px) rotate(-45deg);
+  -o-transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.menu.clicked span:after,
+.menu.clicked span:before {
+  background-color: #ffffff;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+/*  NAV
+========================================== */
+#nav {
+  background: black;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 250px;
+  width: 100%;
+  padding: 100px 40px 60px;
+  overflow-y: auto;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  overflow-x: hidden;
+}
+
+#nav.show {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+#nav.show ul.main li {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.menu.clicked {
+  position: fixed;
+  z-index: 99;
+}
+
+#nav.show ul.main li:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+#nav.show ul.main li:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+#nav.show ul.main li:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+#nav.show ul.main li:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+#nav.show ul.main li:nth-child(5) {
+  transition-delay: 0.75s;
+}
+
+#nav.show ul.main li:nth-child(6) {
+  transition-delay: 0.9s;
+}
+
+#nav.show ul.main li:nth-child(7) {
+  transition-delay: 1.05s;
+}
+
+#nav.show ul.main li:nth-child(8) {
+  transition-delay: 1.2s;
+}
+
+#nav.show ul.main li:nth-child(9) {
+  transition-delay: 1.35s;
+}
+
+#nav.show .about,
+#nav.show .social,
+#nav.show ul.sub {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 1;
+  transition-delay: 0.85s;
+}
+
+@media (min-width: 667px) {
+  #nav {
+    padding: 120px 30px 70px 20px;
+  }
+}
+#nav ul.main {
+  list-style-type: none;
+}
+
+#nav ul.main li {
+  -webkit-transform: translateX(40px);
+  -moz-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  -o-transform: translateX(40px);
+  transform: translateX(40px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  float: none;
+  color: #fff;
+}
+
+#nav ul.main li:last-of-type {
+  margin-bottom: 0;
+}
+
+#nav ul.main li a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: block;
+  padding: 10px 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#nav ul.main li a span {
+  color: #b7ac7f;
+}
+
+#nav ul.main li a:hover {
+  color: #b7ac7f;
+}
+
+#nav ul.sub {
+  list-style-type: none;
+  margin-top: 40px;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#nav ul.sub li {
+  margin-bottom: 10px;
+}
+
+#nav ul.sub li:last-of-type {
+  margin-bottom: 0;
+}
+
+#nav ul.sub li a {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#nav ul.sub li a:hover {
+  color: #b7ac7f;
+}
+
+/*  OVERLAY
+========================================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #603e82;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.col-12 {
+  height: auto !important;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 100vh !important;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://www.dzoriginal.com/uploads/vendor_banner_image/banner_8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header .navbar-expand {
+  justify-content: center;
+}
+.header .brand {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: center;
+}
+.header .brand img {
+  display: block;
+  min-width: 50%;
+  margin: 2rem auto;
+}
+.header .brand nav {
+  text-transform: uppercase;
+}
+.header .brand i {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.asso_info {
+  min-height: 100vh;
+  padding: 5rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(black, transparent), linear-gradient(#fe03ff, transparent), linear-gradient(#8300fe, #8300fe);
+}
+.asso_info hr {
+  border-top: 1px solid white;
+  width: 20%;
+  margin: 0 auto 2rem auto;
+}
+.asso_info section {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.asso_info section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+.asso_info p {
+  align-self: center;
+  line-height: 1.8;
+  text-align: justify;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.group_games {
+  min-height: 100vh;
+  padding: 5rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#01f6ff, transparent), linear-gradient(#fe03ff, transparent), linear-gradient(#fe03ff, #8300fe);
+}
+.group_games section {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.group_games section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.streamer_info {
+  min-height: 100vh;
+  padding: 5rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#8300fe, transparent), linear-gradient(#01f6ff, transparent), linear-gradient(#01f6ff, #01f6ff);
+}
+.streamer_info iframe {
+  width: 100%;
+}
+.streamer_info section {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  /* Bottom right text */
+}
+.streamer_info section .container {
+  position: relative;
+}
+.streamer_info section .text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.streamer_info section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+.streamer_info h3 {
+  margin-bottom: 2rem;
+}
+.streamer_info p {
+  align-self: center;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 0 3rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact {
+  min-height: 100vh;
+  padding: 5rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#8300fe, transparent), linear-gradient(#fe03ff, transparent), linear-gradient(#01f6ff, #01f6ff);
+}
+.contact iframe {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+.contact section {
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .asso_info,
+.group_games,
+.streamer_info {
+    padding: 0;
+  }
+  .asso_info section h2,
+.group_games section h2,
+.streamer_info section h2 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .asso_info section p,
+.group_games section p,
+.streamer_info section p {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+<!-- INFO ASSO -->
+{% block content %}
+<div class="row">
+    <div id="asso_info" class="col-12 asso_info ">
+        <section class="example-classname">
+            <h2>Qui sommes nous ?</h2>
+            <hr>
+            {% placeholder about_us%}
+        </section>
+    </div>
+</div>
+
+<!-- STREAMER -->
+<div class="row">
+    <div id="streamer_info" class="col-12 streamer_info ">
+        <section class="example-classname">
+            <h2>Le ULooz #1 : les 21, 22 et 23 juin à l'espace Georges Frêche de Mende (Lozère)</h2>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    {% placeholder 'intro' %}
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h3>Regardez le en stream</h3>
+                    <iframe src="https://www.youtube.com/embed/yFokwfEHOlE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p class="p-0">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+    
+            </div>
+    
+        </section>
+    </div>
+</div>
+
+<!-- POPULARS GAMES -->
+<div class="row group_games">
+    <div class="col-12 text-center">
+        <h2>Les tournois du ULooz #1 .... Ready ?</h2>
+    </div>
+    <div class="col-6">
+        <section class="example-classname">
+            <div class="row">
+                <div class="col-6 pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Overwatch</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Fortnite</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le
+                                        but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Apex Legend</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le
+                                        but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-6  pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Overwatch</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le
+                                        but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6  pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Fortnite</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le
+                                        but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6  pb-4">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                            <div class="data">
+                                <div class="content">
+                                    
+                                    <h1 class="title"><a href="#">Apex Legend</a></h1>
+                                    <p class="text">C'est à cette période que fut créée l'organisation d'Overwatch, dans le
+                                        but d'éradiquer la menace que représentaient les Omniaques insurgés...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-6">
+        {% placeholder 'presentation' %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 contact ">
+        <section class="example-classname">
+            <h2>Inscrivez-vous au ULooz #1</h2>
+            <a title="Logiciel billetterie en ligne" href="https://weezevent.com/?c=sys_widget" class="weezevent-widget-integration" target="_blank" data-src="https://www.weezevent.com/widget_billeterie.php?id_evenement=457920&lg_billetterie=1&code=32827&width_auto=1&color_primary=95daf4" data-width="650" data-height="600" data-id="457920" data-resize="1" data-width_auto="1" data-noscroll="0" data-nopb="0">Billetterie Weezevent</a><script type="text/javascript" src="https://www.weezevent.com/js/widget/min/widget.min.js"></script>
+    
+        </section>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 contact ">
+        <section class="example-classname">
+            <h2>Nous contacter</h2>
+            {% placeholder 'contact_form' %}
+    
+        </section>
+    </div>
+</div>
+{% endblock content %}

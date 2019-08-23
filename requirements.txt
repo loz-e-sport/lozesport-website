@@ -1,0 +1,8 @@
+django-cms
+django-extensions
+djangocms-text-ckeditor
+django-filer
+djangocms-link
+djangocms-video
+djangocms-file
+djangocms-picture
